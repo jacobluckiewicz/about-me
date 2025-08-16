@@ -15,13 +15,13 @@
 
 <body>
     <div class="wrap-container">
-
         <nav class="nav">
             <div class="nav__items">
-                <button class="nav__items-item">home</button>
-                <button class="nav__items-item">about me</button>
-                <button class="nav__items-item">portfolio</button>
-                <button class="nav__items-item">contact</button>
+                <button class="nav__items-item">
+                    <a href="#home">home</a></button>
+                <button class="nav__items-item"><a href="#about-me">about me</a></button>
+                <button class="nav__items-item"><a href="#portfolio">portfolio</a></button>
+                <button class="nav__items-item"><a href="#contact">contact</a></button>
             </div>
             <hr>
         </nav>
@@ -30,28 +30,34 @@
             <h1 class="header__headline">Hello, dear reader!</h1>
             <p class="">Let me introduce myself😊</p>
 
-            <button class="header__scroll-down-btn" href="#about-me">
-                <i class="fa-solid fa-angles-down"></i>
+            <button class="header__scroll-down-btn">
+                <a href="#about-me">
+                    <i class="fa-solid fa-angles-down"></i>
+                </a>
             </button>
 
         </header>
-        <!--  -->
-        <!-- <main class="main">
-            <section class="about-me section" id="about-me">
-                <h2 class="__headline">Which side of me would you like to get to know first?</h2>
-            </section> -->
-        </main>
-        <!--  -->
-
-        <section class="timeline">
-
-        </section>
-
-        <section class="footer">
-
-        </section>
-
     </div>
+    <!--  -->
+    <hr class="line">
+    <!--  -->
+    <div class="wrap-container">
+        <main class="main">
+            <section class="about-me section" id="about-me">
+                <h4 class="about-me__headline">Which side of me would you like to get to know first?</h4>
+            </section>
+        </main>
+    </div>
+    <!--  -->
+
+    <section class="timeline">
+
+    </section>
+
+    <section class="footer">
+
+    </section>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

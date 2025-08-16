@@ -18,17 +18,17 @@ body {
 html {
 	scroll-behavior: smooth;
 }
-
-hr {
-	margin: 30px;
+.line {
+	width: 35%;
+	margin: 0 auto;
 }
-
 .wrap-container {
 	width: 40%;
 	padding: 1rem;
 	margin: 2em auto;
 	border: 1px solid $little-gray;
 	border-radius: 15px;
+	transition: border 0.3s;
 	background-color: rgba($color: #000000, $alpha: 0.17);
 }
 .wrap-container::before {
@@ -44,12 +44,31 @@ hr {
 	font-weight: bold;
 	content: 'Jakub Łuckiewicz';
 }
+.wrap-container.visible {
+	border: 2px solid $petrol-blue;
+	box-shadow: 0 0 4px $petrol-blue;
+}
+.section {
+	color: $little-gray;
+}
 
 .nav {
+	hr {
+		margin: 30px;
+	}
 	&__items {
 		display: flex;
 		justify-content: space-evenly;
 		&-item {
+			a{
+				text-decoration: none;
+			}
+			a:hover:visited{
+				color: $petrol-blue;
+			}
+			a:visited{
+				color: $little-gray;
+			}
 			position: relative;
 			margin: 0.2rem 0;
 			padding: 8px;
@@ -84,9 +103,6 @@ hr {
 		&-item:hover::before {
 			left: 130%;
 		}
-		&-item:hover {
-			color: $petrol-blue;
-		}
 		&-item:focus {
 			border: 3px solid $petrol-blue;
 		}
@@ -107,7 +123,6 @@ hr {
 	background-size: cover;
 	margin: 30px 30px;
 	&__headline {
-		color: $little-gray;
 		font-size: 1.5em;
 		text-shadow: 1px 1px 3px #000000;
 		text-transform: uppercase;
@@ -118,20 +133,29 @@ hr {
 		cursor: pointer;
 		text-decoration: none;
 		background-color: rgba(0, 0, 0, 0);
-		color: $little-gray;
 		text-shadow: 0px 0px 4px $little-gray;
 		box-shadow: none;
 		border: none;
 		font-size: 3rem;
 		animation: bounce 2s infinite;
-		transition: color 0.3s;
+		a {
+			transition: color 0.3s;
+		}
 	}
+
 	&__scroll-down-btn:hover {
 		color: $petrol-blue;
 	}
+	&__scroll-down-btn {
+		a:visited:hover {
+			color: $petrol-blue;
+		}
+		a:visited {
+			color: $little-gray;
+		}
+	}
 	p {
 		margin-top: 16rem;
-		color: $little-gray;
 	}
 }
 @keyframes bounce {
@@ -152,7 +176,16 @@ hr {
 ////////////////////////////////
 // Przedstawienie sie
 ////////////////////////////////
+.main {
+	// border: 1px solid red;
+}
 
+.about-me {
+	&__headline {
+		text-align: center;
+		font-size: 1em;
+	}
+}
 ////////////////////////////////
 /// MEDIA QUERY
 /// ////////////////////////////
@@ -212,7 +245,7 @@ hr {
 		&__items {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			grid-gap: 0.4rem; 
+			grid-gap: 0.4rem;
 			justify-items: center;
 			&-item {
 				padding: 1rem 1rem;
@@ -225,4 +258,3 @@ hr {
 		}
 	}
 }
-// test
