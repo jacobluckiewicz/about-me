@@ -169,23 +169,39 @@ html {
   text-align: center;
 }
 .about-me__facts-box {
+  margin: 15px;
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 15px;
 }
-.about-me__facts-box-shelf {
+.about-me__facts-box-envelope {
+  margin: 0 auto;
+}
+.about-me__facts-box-envelope-text-area {
+  height: 5rem;
+  width: 150px;
+  padding: 10px 5px;
   font-size: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.37);
+  border: 2px solid #f9f9f9;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: none;
+}
+.about-me__facts-box-envelope-box-shelf {
   height: 150px;
   width: 150px;
   margin: 0 auto;
   background-color: #bbb;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
-  font-weight: bold;
   background-size: cover;
   background-position: center;
+  border: 2px solid #f9f9f9;
   transition: background-image 1s ease-in-out;
+}
+.about-me__facts-box-envelope:hover {
+  scale: 1.2;
 }
 .about-me__headline {
   font-size: 1.5rem;
