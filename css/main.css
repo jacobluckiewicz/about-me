@@ -165,77 +165,101 @@ html {
     transform: translateY(-15px);
   }
 }
-.about-me {
-  text-align: center;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center; /* środek w kolumnie */
+  align-items: center; /* środek w wierszu */
+  max-width: 360px; /* 2 × 150 + gap */
+  margin: 0 auto;
+  padding: 1rem;
+  /* --- KARTA 150×300 z perspektywą --- */
+  /* wspólne dla front/back */
+  /* --- FRONT = gradient + tekst --- */
+  /* --- BACK = zdjęcie --- */
+  /* flip na hover */
+  /* --- PODMIEŃ ŚCIEŻKI OBRAZÓW NA SWOJE --- */
 }
-.about-me__facts-box {
-  margin: 15px;
+.cards .preview-text {
+  font-size: 2rem;
+  color: #f9f9f9;
+}
+.cards .card {
+  position: relative;
+  width: 150px;
+  height: 300px;
+  perspective: 800px;
+}
+.cards .front,
+.cards .back {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.8s, opacity 0.8s;
+}
+.cards .front {
+  background-image: linear-gradient(315deg, #fee2f8 0%, #dcf8ef 74%);
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.8rem;
+  color: #216477;
 }
-.about-me__facts-box-envelope {
-  margin: 0 auto;
+.cards .front h3 {
+  font-size: 1rem;
+  margin: 0 0 0.4rem 0;
 }
-.about-me__facts-box-envelope-text-area {
-  height: 5rem;
-  width: 150px;
-  padding: 10px 5px;
-  font-size: 0.8rem;
-  background-color: rgba(0, 0, 0, 0.37);
-  border: 2px solid #f9f9f9;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom: none;
+.cards .front p {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  margin: 0;
+  color: #216477;
 }
-.about-me__facts-box-envelope-box-shelf {
-  height: 150px;
-  width: 150px;
-  margin: 0 auto;
-  background-color: #bbb;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
+.cards .back {
   background-size: cover;
   background-position: center;
-  border: 2px solid #f9f9f9;
-  transition: background-image 1s ease-in-out;
+  transform: rotateY(-180deg);
+  opacity: 0;
 }
-.about-me__facts-box-envelope:hover {
-  scale: 1.2;
+.cards .card:hover .front {
+  transform: rotateY(180deg);
+  opacity: 0;
 }
-.about-me__headline {
-  font-size: 1.5rem;
+.cards .card:hover .back {
+  transform: rotateY(0deg);
+  opacity: 1;
 }
-.about-me__side-text {
-  font-size: 0.8rem;
-  margin: 5px;
+.cards .back-one {
+  background-image: url("../images/kjeragbolten.jpg");
 }
-.about-me__card-box {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+.cards .back-two {
+  background-image: url("../images/buildings_in_forest.webp");
 }
-.about-me__card-box-card {
-  height: 100px;
-  width: 100px;
-  background-color: #fff;
-  margin: 40px auto;
+.cards .back-three {
+  background-image: url("../images/preikestolen_norway.jpg");
 }
-.about-me__card-box-card:hover {
-  height: 200px;
-  width: 200px;
+.cards .back-four {
+  background-image: url("../images/mountains.jpg");
 }
-.about-me__card-box .one {
-  background-color: green;
+.cards .back-five {
+  background-image: url("../images/laptop.jpg");
 }
-.about-me__card-box .two {
-  background-color: red;
-}
-.about-me__card-box .three {
-  background-color: blue;
+.cards .back-six {
+  background-image: url("../images/hiking.jpg");
 }
 
-@keyframes pullup {}
+/* --- RESPONSYWNOŚĆ: na wąskich ekranach 1 kolumna --- */
+@media (max-width: 420px) {
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 180px;
+  }
+}
 @media (max-width: 1200px) {
   .wrap-container {
     width: 55%;
@@ -265,6 +289,9 @@ html {
   }
   .header p {
     margin-top: 13em;
+  }
+  .cards {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 400px) {

@@ -11,7 +11,7 @@ const observer = new IntersectionObserver(
 			}
 		})
 	},
-	{ threshold: 0.7 }
+	// { threshold: 0.7 }
 ) // 70% must be viewed
 
 boxes.forEach(box => observer.observe(box))
@@ -28,4 +28,4 @@ function changeBackground() {
 }
 
 changeBackground() // show first image
-setInterval(changeBackground, 4000) // change every 4s
+setInterval(changeBackground, 3000) // change every 2s
