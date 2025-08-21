@@ -67,3 +67,20 @@ document.querySelectorAll('.nav__items-btn').forEach(btn => {
 document.querySelector('.header__scroll-down-btn')?.addEventListener('click', () => {
 	document.querySelector('#about-me')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 })
+
+
+//scale on scroll items
+
+const scaleItems = document.querySelectorAll('.timeline-item');
+
+const scaleObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    } else {
+      entry.target.classList.remove('active'); // remove if you want it to shrink back
+    }
+  });
+}, { threshold: 0.3 }); // adjust visibility threshold
+
+scaleItems.forEach(item => scaleObserver.observe(item));

@@ -114,6 +114,12 @@ html {
 	background-position: center;
 	background-size: cover;
 	margin: 30px 30px;
+	img {
+		height: 200px;
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 50%;
+		margin: 3rem 0;
+	}
 	&__headline {
 		font-size: 1.5em;
 		text-shadow: 1px 1px 3px #000000;
@@ -145,9 +151,6 @@ html {
 		a:visited {
 			color: $little-gray;
 		}
-	}
-	p {
-		margin-top: 16rem;
 	}
 }
 @keyframes bounce {
@@ -306,9 +309,11 @@ html {
 	opacity: 1;
 	transform: translateY(40px);
 	transition: all 0.6s ease-out;
+	scale: 0.8;
 }
 
 .timeline-item.active {
+	scale: 1.1;
 	opacity: 1;
 	transform: translateY(0);
 }
@@ -405,21 +410,11 @@ html {
 	.wrap-container {
 		width: 55%;
 	}
-	.header {
-		p {
-			margin-top: 14em;
-		}
-	}
 }
 
 @media (max-width: 900px) {
 	.wrap-container {
 		width: 65%;
-	}
-	.header {
-		p {
-			margin-top: 13em;
-		}
 	}
 }
 
@@ -440,11 +435,6 @@ html {
 			&-item {
 				font-size: 0.7rem;
 			}
-		}
-	}
-	.header {
-		p {
-			margin-top: 13em;
 		}
 	}
 	.cards {
@@ -495,11 +485,6 @@ html {
 			}
 		}
 	}
-	.header {
-		p {
-			margin-top: 9em;
-		}
-	}
 	.cards {
 		grid-template-columns: 1fr;
 		max-width: 180px;
@@ -509,5 +494,3 @@ html {
 		scroll-margin-top: 370px;
 	}
 }
-
-

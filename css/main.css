@@ -113,6 +113,12 @@ html {
   background-size: cover;
   margin: 30px 30px;
 }
+.header img {
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  margin: 3rem 0;
+}
 .header__headline {
   font-size: 1.5em;
   text-shadow: 1px 1px 3px #000000;
@@ -140,9 +146,6 @@ html {
 }
 .header__scroll-down-btn a:visited {
   color: #f9f9f9;
-}
-.header p {
-  margin-top: 16rem;
 }
 
 @keyframes bounce {
@@ -284,9 +287,11 @@ html {
   opacity: 1;
   transform: translateY(40px);
   transition: all 0.6s ease-out;
+  scale: 0.8;
 }
 
 .timeline-item.active {
+  scale: 1.1;
   opacity: 1;
   transform: translateY(0);
 }
@@ -376,16 +381,10 @@ html {
   .wrap-container {
     width: 55%;
   }
-  .header p {
-    margin-top: 14em;
-  }
 }
 @media (max-width: 900px) {
   .wrap-container {
     width: 65%;
-  }
-  .header p {
-    margin-top: 13em;
   }
 }
 @media (max-width: 786px) {
@@ -402,9 +401,6 @@ html {
   }
   .nav__items-item {
     font-size: 0.7rem;
-  }
-  .header p {
-    margin-top: 13em;
   }
   .cards {
     grid-template-columns: 1fr;
@@ -447,9 +443,6 @@ html {
   }
   .nav__items-item {
     padding: 1rem 1rem;
-  }
-  .header p {
-    margin-top: 9em;
   }
   .cards {
     grid-template-columns: 1fr;
