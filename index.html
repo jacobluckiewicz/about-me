@@ -17,16 +17,16 @@
     <div class="wrap-container">
         <nav class="nav">
             <div class="nav__items">
-                <button class="nav__items-item">
-                    <a href="#home">home</a></button>
-                <button class="nav__items-item"><a href="#about-me">about me</a></button>
-                <button class="nav__items-item"><a href="#portfolio">portfolio</a></button>
-                <button class="nav__items-item"><a href="#contact">contact</a></button>
+                <button class="nav__items-btn" data-target="#home">home</button>
+                <button class="nav__items-btn" data-target="#about-me">about me</button>
+                <button class="nav__items-btn" data-target="#timeline">timeline</button>
+                <button class="nav__items-btn" data-target="#contact">contact</button>
             </div>
             <hr>
         </nav>
+
         <!--  -->
-        <header class=" header section">
+        <header class="header section" id="home">
             <h1 class="header__headline">Hello, dear reader!</h1>
             <p class="">Let me introduce myself😊</p>
 
@@ -41,68 +41,196 @@
     <!--  -->
     <hr class="line">
     <!--  -->
-    <div class="wrap-container">
-        <main class="main">
+    <main class="main">
+        <div class="wrap-container">
             <section class=" about-me cards" id="about-me">
-                <h4 class="preview-text">This is me in my purest form.</h4>
                 <!-- 1 -->
-                <div class="card">
-                    <div class="front">
-                        <h3>Jacob Luckiewicz</h3>
-                        <p>A 19-year-old who loves discovering amazing places.</p>
+                <div class="row">
+                    <h2 class="preview-text">This is me in my purest form.</h2>
+                    <div class="card">
+                        <div class="front">
+                            <h3>Jacob Luckiewicz</h3>
+                            <p>A 19-year-old who loves discovering amazing places.</p>
+                        </div>
+                        <div class="back back-one"></div>
                     </div>
-                    <div class="back back-one"></div>
                 </div>
-
                 <!-- 2 -->
-                <div class="card">
-                    <div class="front">
-                        <h3>My little homeland</h3>
-                        <p>Where everything beggins</p>
+                <div class="row">
+                    <div class="card">
+                        <div class="front">
+                            <h3>My little homeland</h3>
+                            <p>Where it all began</p>
+                        </div>
+                        <div class="back back-two"></div>
                     </div>
-                    <div class="back back-two"></div>
+                    <h2 class="preview-text">I'm from northeast Poland.</h2>
                 </div>
-                <h4 class="preview-text">I'm from northeastern Poland.</h4>
                 <!-- 3 -->
-                <h4 class="preview-text">Hobby? Hiking.</h4>
-                <div class="card">
-                    <div class="front">
-                        <h3>Especially mountains</h3>
-                        <p>For now Polish and Norwegian</p>
+                <div class="row">
+                    <h2 class="preview-text">Hobby? Hiking.</h2>
+                    <div class="card">
+                        <div class="front">
+                            <h3>Especially mountains</h3>
+                            <p>For now Polish and Norwegian</p>
+                        </div>
+                        <div class="back back-three"></div>
                     </div>
-                    <div class="back back-three"></div>
                 </div>
-
                 <!-- 4 -->
-                <div class="card">
-                    <div class="front">
-                        <h3>University of Wrocław</h3>
-                        <p>Faculty of Historical and Pedagogical Sciences. <b>Psychology</b></p>
+                <div class="row">
+                    <div class="card">
+                        <div class="front">
+                            <h3>University of Wrocław</h3>
+                            <p>Faculty of Historical and Pedagogical Sciences. <b>Psychology</b></p>
+                        </div>
+                        <div class="back back-four"></div>
                     </div>
-                    <div class="back back-four"></div>
-                </div>
-                <h4 class="preview-text">Education? About to start.</h4>
-                
-                <!-- 5 -->
-                <div class="card">
-                    <div class="front">
-                        <h3></h3>
-                        <p>Frontend projekty</p>
-                    </div>
-                    <div class="back back-five"></div>
+                    <h2 class="preview-text">Education? About to start.</h2>
                 </div>
 
-                <!-- 6 -->
-                <div class="card">
-                    <div class="front">
-                        <h3>Sport</h3>
-                        <p>Trekking i rower</p>
+                <!-- 5 -->
+                <div class="row">
+                    <h2 class="preview-text">My best friend</h2>
+                    <div class="card">
+                        <div class="front">
+                            <h3>Misiek (smth. like teddy bear)</h3>
+                            <p>Best dog I've ever seen🐶</p>
+                        </div>
+                        <div class="back back-five"></div>
                     </div>
-                    <div class="back back-six"></div>
+                </div>
+                <!-- 6 -->
+                <div class="row">
+                    <div class="card">
+                        <div class="front">
+                            <h3>Just please</h3>
+                            <p>Dont be scared</p>
+                        </div>
+                        <div class="back back-six"></div>
+                    </div>
+                    <h2 class="preview-text">Sense of humour? Wild.</h2>
                 </div>
             </section>
-        </main>
-    </div>
+        </div>
+        <!--  -->
+        <hr class="line">
+        <!--  -->
+        <div class="wrap-container">
+            <h1 class="timeline-title">Well, let's start from the beginning, the biggest events in my life.</h1>
+
+            <section class="timeline" id="timeline">
+                <div class="timeline-item big">
+                    <div class="content">
+                        <h2>2006</h2>
+                        <p>Born in Bialystok, Poland.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item small">
+                    <div class="content">
+                        <h2>2009</h2>
+                        <p>Miss my chance to buy bitcoin.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item big">
+                    <div class="content">
+                        <h2>2015, December</h2>
+                        <p>Ordination of altar servers in the Catholic Church</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item small">
+                    <div class="content">
+                        <h2>2020</h2>
+                        <p>I chose a secondary school, the decision to become a programmer.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item big">
+                    <div class="content">
+                        <h2>2024, May</h2>
+                        <p>Reaching adulthood, obtaining a category B driving licence.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item small">
+                    <div class="content">
+                        <h2>2024, Jul. - Aug.</h2>
+                        <p>Seasonal work as a general construction worker</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item big">
+                    <div class="content">
+                        <h2>2024-November : 2025-April</h2>
+                        <p>Working in the food service industry. Cheering people up by making and delivering food to
+                            their doorsteps</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item small">
+                    <div class="content">
+                        <h2>2025, May</h2>
+                        <p>Passing the school-leaving examination, choosing a course of study</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item big">
+                    <div class="content">
+                        <h2>2025, May</h2>
+                        <p>Achieve full professional qualifications as a programmer technician</p>
+                    </div>
+                </div>
+                <div class="timeline-item small">
+                    <div class="content">
+                        <h2>2025, Jul.</h2>
+                        <p>Passing the school-leaving examination, choosing a course of study</p>
+                    </div>
+                </div>
+                <div class="timeline-item big">
+                    <div class="content">
+                        <h2>2025, July - September</h2>
+                        <p>Trip to Norway and seasonal work as a packaging specialist and quality control tester.</p>
+                    </div>
+                </div>
+                <div class="timeline-item small">
+                    <div class="content">
+                        <h2>2025, October</h2>
+                        <p>Moving to Wrocław and starting university</p>
+                    </div>
+                </div>
+                <div class="timeline-item big">
+                    <div class="content">
+                        <h2>2025, October</h2>
+                        <p class="loading-text">Starting work at<span></span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <hr class="line">
+        <div class="wrap-container">
+            <section class="contact" id="contact">
+                <h1 class="contact__header">Contact me below</h1>
+
+                <div class="contact__box">
+                    <div class="contact__box-shelf">
+                        <p>Click
+                            <a href="mailto:jakub.luckiewicz1@gmail.com" target="_blank"><i
+                                    class="fa-solid fa-envelope"></i></a>
+                            to open mailbox or <span onclick="copyEmail()">copy</span> email.
+                        </p>
+                    </div>
+                    <div class="contact__box-shelf">
+                        <p>Are you missing my number? Don't worry anymore - <span onclick="copyNumber()">+48 501 407
+                                979</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
     <script src="./js/main.js"></script>
 </body>
 

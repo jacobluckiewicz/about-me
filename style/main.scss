@@ -14,6 +14,7 @@ body {
 	background-position: center;
 	background-attachment: fixed;
 	letter-spacing: 1.75px;
+	min-width: 375px;
 }
 html {
 	scroll-behavior: smooth;
@@ -60,18 +61,8 @@ html {
 	&__items {
 		display: flex;
 		justify-content: space-evenly;
-		&-item {
-			a {
-				text-decoration: none;
-			}
-			a:hover:visited {
-				color: $petrol-blue;
-			}
-			a:visited {
-				color: $little-gray;
-			}
+		&-btn {
 			position: relative;
-			margin: 0.2rem 0;
 			padding: 8px;
 			background: none;
 			border: 1px solid $little-gray;
@@ -85,15 +76,15 @@ html {
 			outline: none;
 		}
 
-		&-item::before,
-		&-item::after {
+		&-btn::before,
+		&-btn::after {
 			display: block;
 			position: absolute;
 			content: '';
 			transition: all 0.5s;
 			z-index: -1;
 		}
-		&-item::before {
+		&-btn::before {
 			top: -30px;
 			left: -130px;
 			height: 160%;
@@ -101,10 +92,10 @@ html {
 			background-image: linear-gradient(-90deg, rgba($petrol-blue, $alpha: 0.3), rgba(255, 255, 255, 0));
 			transform: rotate(20deg);
 		}
-		&-item:hover::before {
+		&-btn:hover::before {
 			left: 130%;
 		}
-		&-item:focus {
+		&-btn:focus {
 			border: 3px solid $petrol-blue;
 		}
 	}
@@ -179,7 +170,7 @@ html {
 ////////////////////////////////
 .cards {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(1, 2fr);
 	gap: 1rem;
 	justify-items: center; /* środek w kolumnie */
 	align-items: center; /* środek w wierszu */
@@ -187,9 +178,16 @@ html {
 	margin: 0 auto;
 	padding: 1rem;
 
-	.preview-text{
+	.row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+	}
+	.preview-text {
 		font-size: 2rem;
 		color: $little-gray;
+		text-align: center;
 	}
 
 	/* --- KARTA 150×300 z perspektywą --- */
@@ -197,7 +195,7 @@ html {
 		position: relative;
 		width: 150px;
 		height: 300px;
-		perspective: 800px;
+		flex-shrink: 0;
 	}
 
 	/* wspólne dla front/back */
@@ -213,7 +211,8 @@ html {
 
 	/* --- FRONT = gradient + tekst --- */
 	.front {
-		background-image: linear-gradient(315deg, #fee2f8 0%, #dcf8ef 74%);
+		// background-image: linear-gradient(315deg, #fee2f8 0%, #dcf8ef 74%);
+		background-color: $moccasin;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -263,20 +262,140 @@ html {
 		background-image: url('../images/preikestolen_norway.jpg');
 	}
 	.back-four {
-		background-image: url('../images/mountains.jpg');
+		background-image: url('../images/uwr.webp');
 	}
 	.back-five {
-		background-image: url('../images/laptop.jpg');
+		background-image: url('../images/dog.jpg');
 	}
 	.back-six {
-		background-image: url('../images/hiking.jpg');
+		background-image: url('../images/funny_visit.jpg');
 	}
 }
-/* --- RESPONSYWNOŚĆ: na wąskich ekranach 1 kolumna --- */
-@media (max-width: 420px) {
-	.cards {
-		grid-template-columns: 1fr;
-		max-width: 180px;
+
+// ///////////////////////
+// / TIMELINE
+// //////////////////////////
+.timeline {
+	position: relative;
+	max-width: 900px;
+	margin: 50px auto;
+	padding: 2rem 0;
+	scroll-margin-top: 240px;
+}
+.timeline-title {
+	text-align: center;
+	color: $little-gray;
+}
+
+/* central line */
+.timeline::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 4px;
+	height: 100%;
+	background: #216477;
+	transform: translateX(-50%);
+}
+.timeline-item {
+	position: relative;
+	width: 50%;
+	padding: 1rem 2rem;
+	box-sizing: border-box;
+	opacity: 1;
+	transform: translateY(40px);
+	transition: all 0.6s ease-out;
+}
+
+.timeline-item.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.timeline-item:nth-child(odd) {
+	left: 0;
+	text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+	left: 50%;
+	text-align: left;
+}
+
+.timeline-item .content {
+	h2 {
+		font-size: 1.5rem;
+	}
+	background: #fff;
+	padding: 1rem;
+	border-radius: 10px;
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item.big .content {
+	font-size: 1.2rem;
+	padding: 1.5rem;
+	background: linear-gradient(135deg, #216477, #3da9a9);
+	color: white;
+}
+
+.timeline-item.small .content {
+	font-size: 0.9rem;
+	background: #f7f7f7;
+}
+.loading-text {
+	text-align: left;
+}
+.loading-text span::after {
+	content: '';
+	animation: dots 1.5s steps(3, end) infinite;
+}
+
+.contact {
+	&__header {
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		text-align: center;
+		color: $little-gray;
+	}
+	h1 {
+		font-size: 2rem;
+	}
+
+	&__box {
+		&-shelf {
+			margin: 20px;
+			// border: 1px solid red;
+			color: $little-gray;
+			span {
+				color: #42c1ac;
+				cursor: pointer;
+			}
+			i {
+				color: #42c1ac;
+			}
+		}
+		a {
+			text-decoration: none;
+			list-style: none;
+		}
+	}
+}
+
+@keyframes dots {
+	0% {
+		content: '';
+	}
+	33% {
+		content: '.';
+	}
+	66% {
+		content: '..';
+	}
+	100% {
+		content: '...';
 	}
 }
 ////////////////////////////////
@@ -304,7 +423,11 @@ html {
 	}
 }
 
-@media (max-width: 700px) {
+@media (max-width: 786px) {
+	.row {
+		flex-direction: column;
+		text-align: center;
+	}
 	.wrap-container {
 		width: 70%;
 	}
@@ -326,6 +449,30 @@ html {
 	}
 	.cards {
 		grid-template-columns: 1fr;
+		margin: 0 auto;
+	}
+	.timeline {
+		scroll-margin-top: 300px;
+	}
+	.timeline::before {
+		left: 20px; /* move line to the left */
+	}
+
+	.timeline-item {
+		width: 100%;
+		padding-left: 60px; /* space for the line & dot */
+		padding-right: 20px;
+		text-align: left;
+	}
+
+	.timeline-item:nth-child(odd),
+	.timeline-item:nth-child(even) {
+		left: 0; /* no alternating */
+	}
+
+	.timeline-item .content::before {
+		left: -40px; /* dot always on the line */
+		right: auto;
 	}
 }
 
@@ -353,4 +500,14 @@ html {
 			margin-top: 9em;
 		}
 	}
+	.cards {
+		grid-template-columns: 1fr;
+		max-width: 180px;
+		margin: 0 0;
+	}
+	.timeline {
+		scroll-margin-top: 370px;
+	}
 }
+
+
