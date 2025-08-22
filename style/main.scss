@@ -199,6 +199,9 @@ html {
 		width: 150px;
 		height: 300px;
 		flex-shrink: 0;
+		.moving-text {
+			order: 1;
+		}
 	}
 
 	/* wspólne dla front/back */
@@ -276,22 +279,28 @@ html {
 }
 
 .pulse {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid $petrol-blue;
-  border-radius: 15px;
-  animation: pulse-border 2s ease-in-out infinite;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid $petrol-blue;
+	border-radius: 15px;
+	animation: pulse-border 2s ease-in-out infinite;
 }
-.pulse:hover{
+.pulse:hover {
 	animation: none;
 	border: none;
 }
 
 @keyframes pulse-border {
-  0%   { box-shadow: 0 0 0 0 $petrol-blue; }
-  50%  { box-shadow: 0 0 0 15px rgba(11,110,122, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(11,110,122, 0); }
+	0% {
+		box-shadow: 0 0 0 0 $petrol-blue;
+	}
+	50% {
+		box-shadow: 0 0 0 15px rgba(11, 110, 122, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(11, 110, 122, 0);
+	}
 }
 
 // ///////////////////////
@@ -482,6 +491,9 @@ html {
 	.timeline-item .content::before {
 		left: -40px; /* dot always on the line */
 		right: auto;
+	}
+	.moving-text {
+		order: -1;
 	}
 }
 

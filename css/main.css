@@ -192,6 +192,9 @@ html {
   height: 300px;
   flex-shrink: 0;
 }
+.cards .card .moving-text {
+  order: 1;
+}
 .cards .front,
 .cards .back {
   position: absolute;
@@ -450,6 +453,9 @@ html {
   .timeline-item .content::before {
     left: -40px; /* dot always on the line */
     right: auto;
+  }
+  .moving-text {
+    order: -1;
   }
 }
 @media (max-width: 400px) {
