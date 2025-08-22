@@ -84,3 +84,10 @@ const scaleObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 }); // adjust visibility threshold
 
 scaleItems.forEach(item => scaleObserver.observe(item));
+
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('active'); // toggle effect on click
+  });
+});

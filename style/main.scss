@@ -245,11 +245,11 @@ html {
 	}
 
 	/* flip na hover */
-	.card:hover .front {
+	.card.active .front {
 		transform: rotateY(180deg);
 		opacity: 0;
 	}
-	.card:hover .back {
+	.card.active .back {
 		transform: rotateY(0deg);
 		opacity: 1;
 	}
